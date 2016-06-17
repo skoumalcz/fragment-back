@@ -23,7 +23,7 @@ Usage
 Let your Fragment implement BackFragment interface:
 
 ```java
-public abstract class BaseFragment extends Fragment implements BackFragment {
+public abstract class MyFragment extends Fragment implements BackFragment {
 
     public boolean onBackPressed() {
 
@@ -65,7 +65,7 @@ public class MainActivity extends BackFragmentFragmentActivity {
 3. Manually redirect back-pressed events
 
 ```java
-public class BackFragmentAppCompatActivity extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity {
 
     @Override
     public void onBackPressed() {
@@ -109,7 +109,7 @@ public class MainActivity extends BackFragmentAppCompatActivity {
 }
 ```
 
-### Adjusting priority
+### Adjust priority
 We support five fragment priorities for ordering back-pressed event delivery:
 
 * VERY_LOW_BACK_PRIORITY

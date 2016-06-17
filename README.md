@@ -9,12 +9,12 @@ Download
 
 Download the latest JAR:
 
-[ ![Download](https://api.bintray.com/packages/skoumal/maven/joogar/images/download.svg) ](https://bintray.com/skoumal/maven/joogar/_latestVersion)
+[ ![Download](https://api.bintray.com/packages/skoumal/maven/joogar/images/download.svg) ](https://bintray.com/skoumal/maven/fragment-back/_latestVersion)
 
 or via Gradle:
 
 ```groovy
-compile 'net.skoumal.joogar:joogar:0.1.6'
+compile 'net.skoumal.fragmentback:fragment-back:0.1.0'
 ```
 
 Usage

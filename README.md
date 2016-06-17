@@ -23,7 +23,7 @@ Usage
 Let your Fragment implement BackFragment interface:
 
 ```java
-public abstract class MyFragment extends Fragment implements BackFragment {
+public class MyFragment extends Fragment implements BackFragment {
 
     public boolean onBackPressed() {
 

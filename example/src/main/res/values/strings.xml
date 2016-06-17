@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">FragmentBack</string>
+
+    <string name="back_handled">Back handled!</string>
+    <string name="activity_first_back_handled">Activity first back handled!</string>
+    <string name="activity_last_back_handled">Activity will be closed by next back!</string>
+</resources>

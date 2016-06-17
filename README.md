@@ -9,7 +9,7 @@ Download
 
 Download the latest JAR:
 
-[ ![Download](https://api.bintray.com/packages/skoumal/maven/joogar/images/download.svg) ](https://bintray.com/skoumal/maven/fragment-back/_latestVersion)
+[ ![Download](https://api.bintray.com/packages/skoumal/maven/fragment-back/images/download.svg) ](https://bintray.com/skoumal/maven/fragment-back/_latestVersion)
 
 or via Gradle:
 

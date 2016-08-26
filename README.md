@@ -1,7 +1,7 @@
 FragmentBack
 ============
 
-Tiny library for handling hardare back button click in fragments.
+Tiny library for handling hardware back button click in fragments.
 
 
 Download

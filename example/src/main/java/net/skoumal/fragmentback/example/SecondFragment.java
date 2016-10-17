@@ -46,6 +46,7 @@ public class SecondFragment extends Fragment implements BackFragment {
                              Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_main, container, false);
         myTextView = (TextView)view.findViewById(R.id.my_text_view);
+        ((TextView)view.findViewById(R.id.header_text_view)).setText(R.string.second_fragment);
         return view;
     }
 

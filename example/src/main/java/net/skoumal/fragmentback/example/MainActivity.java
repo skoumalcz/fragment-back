@@ -15,54 +15,35 @@
  */
 package net.skoumal.fragmentback.example;
 
-import android.graphics.Color;
-import android.graphics.Typeface;
+import android.content.Intent;
 import android.os.Bundle;
-import android.text.TextUtils;
-import android.widget.TextView;
+import android.view.View;
 
-import net.skoumal.fragmentback.example.R;
 import net.skoumal.fragmentback.BackFragmentAppCompatActivity;
 
 public class MainActivity extends BackFragmentAppCompatActivity {
 
-    private TextView activityTextView;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
         setContentView(R.layout.activity_main);
 
-        if(savedInstanceState == null) {
-            getSupportFragmentManager().beginTransaction()
-                    .add(R.id.second_fragment_container, SecondFragment.newInstance())
-                    .commit();
-        }
-
-        activityTextView = (TextView) findViewById(R.id.activity_text_view);
-    }
-
-    @Override
-    public void onBackPressed() {
-
-        // you can override this method to handle back here in certain conditions
-        if(TextUtils.isEmpty(activityTextView.getText())) {
-            // handle first back button in activity
-            activityTextView.setText(R.string.activity_first_back_handled);
-        } else if(!onBackPressedWithResult()) { // ask fragments to handle back
-            // if fragments no longer care about back, handle it here
-            if(TextUtils.equals(activityTextView.getText(),
-                    getString(R.string.activity_first_back_handled))) {
-                // handle the last back before quiting activity here
-                activityTextView.setText(R.string.activity_last_back_handled);
-                activityTextView.setTextColor(Color.RED);
-                activityTextView.setTypeface(null, Typeface.BOLD);
-            } else {
-                // fall back to default back behaviour
-                super.onBackPressed();
+        findViewById(R.id.standard_activity_button).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(MainActivity.this, StandardActivity.class));
             }
-        } else {
-            // back was handled by some fragment
-        }
+        });
+
+        findViewById(R.id.viewpager_activity_button).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(MainActivity.this, ViewPagerActivity.class));
+            }
+        });
+
+
     }
+
 }

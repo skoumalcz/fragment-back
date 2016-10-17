@@ -4,4 +4,10 @@
     <string name="back_handled">Back handled!</string>
     <string name="activity_first_back_handled">Activity first back handled!</string>
     <string name="activity_last_back_handled">Activity will be closed by next back!</string>
+    <string name="first_fragment">First fragment</string>
+    <string name="second_fragment">Second fragment</string>
+
+    <!-- Main activity -->
+    <string name="standard_activity_button">Standard Activity</string>
+    <string name="view_pager_activity_button">ViewPager</string>
 </resources>

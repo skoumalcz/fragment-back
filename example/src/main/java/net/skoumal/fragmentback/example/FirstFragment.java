@@ -15,8 +15,6 @@
  */
 package net.skoumal.fragmentback.example;
 
-import android.content.Context;
-import android.net.Uri;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.text.TextUtils;
@@ -26,9 +24,6 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 
 import net.skoumal.fragmentback.BackFragment;
-import net.skoumal.fragmentback.example.R;
-
-import org.w3c.dom.Text;
 
 /**
  * Simple fragment with low priority for back button event.
@@ -51,6 +46,7 @@ public class FirstFragment extends Fragment implements BackFragment {
                              Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_main, container, false);
         myTextView = (TextView)view.findViewById(R.id.my_text_view);
+        ((TextView)view.findViewById(R.id.header_text_view)).setText(R.string.first_fragment);
         return view;
     }
 

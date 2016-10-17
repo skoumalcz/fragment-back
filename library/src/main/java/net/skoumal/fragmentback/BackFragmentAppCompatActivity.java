@@ -17,8 +17,6 @@ package net.skoumal.fragmentback;
 
 import android.support.v7.app.AppCompatActivity;
 
-import net.skoumal.fragmentback.BackFragmentHelper;
-
 public class BackFragmentAppCompatActivity extends AppCompatActivity {
 
     @Override

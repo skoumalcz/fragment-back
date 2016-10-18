@@ -13,8 +13,8 @@ ext {
     siteUrl = 'https://github.com/skoumalcz/fragment-back'
     gitUrl = 'https://github.com/skoumalcz/fragment-back.git'
 
-    libraryVersion = '0.2.0'
-    libraryVersionCode = 200
+    libraryVersion = '0.2.1'
+    libraryVersionCode = 201
 
     developerId = 'skoumal'
     developerName = 'SKOUMAL, s.r.o.'

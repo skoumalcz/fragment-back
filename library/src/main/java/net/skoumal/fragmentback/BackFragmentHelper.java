@@ -46,16 +46,20 @@ public class BackFragmentHelper {
     private static List<Fragment> getAllActivityFragments(FragmentActivity gActivity) {
         List<Fragment> fragmentList = gActivity.getSupportFragmentManager().getFragments();
 
-        List<Fragment> result = new ArrayList<>(fragmentList);
+        if(fragmentList != null && fragmentList.size() > 0) {
+            List<Fragment> result = new ArrayList<>(fragmentList);
 
-        for(Fragment f : fragmentList) {
-            List<Fragment> nestedFragmentList = f.getChildFragmentManager().getFragments();
-            if(nestedFragmentList != null && nestedFragmentList.size() > 0) {
-                result.addAll(nestedFragmentList);
+            for (Fragment f : fragmentList) {
+                List<Fragment> nestedFragmentList = f.getChildFragmentManager().getFragments();
+                if (nestedFragmentList != null && nestedFragmentList.size() > 0) {
+                    result.addAll(nestedFragmentList);
+                }
             }
-        }
 
-        return result;
+            return result;
+        } else {
+            return new ArrayList<>(0);
+        }
     }
 
     private static boolean fireOnBackPressedEvent(List<?> gFragmentList) {

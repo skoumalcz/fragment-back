@@ -43,7 +43,12 @@ public class MainActivity extends BackFragmentAppCompatActivity {
             }
         });
 
-
+        findViewById(R.id.nested_fragments_activity_button).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(MainActivity.this, NestedFragementsActivity.class));
+            }
+        });
     }
 
 }

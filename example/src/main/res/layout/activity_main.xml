@@ -20,4 +20,11 @@
         android:text="@string/view_pager_activity_button"
         />
 
+    <Button
+        android:id="@+id/nested_fragments_activity_button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/nested_fragments_activity_button"
+        />
+
 </LinearLayout>

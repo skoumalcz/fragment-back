@@ -10,4 +10,5 @@
     <!-- Main activity -->
     <string name="standard_activity_button">Standard Activity</string>
     <string name="view_pager_activity_button">ViewPager</string>
+    <string name="nested_fragments_activity_button">Nested fragments</string>
 </resources>

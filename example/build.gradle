@@ -8,8 +8,8 @@ android {
         applicationId "net.skoumal.fragmentback"
         minSdkVersion 14
         targetSdkVersion 23
-        versionCode 1
-        versionName "1.0"
+        versionCode 10100
+        versionName "1.1.0"
     }
     buildTypes {
         release {

@@ -17,7 +17,6 @@ package net.skoumal.fragmentback;
 
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentActivity;
-import android.support.v7.app.AppCompatActivity;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -35,26 +34,28 @@ public class BackFragmentHelper {
 
     /**
      * Fire {@link BackFragment#onBackPressed()} event on all {@link BackFragment} fragments in
-     * given {@link AppCompatActivity}.
-     * @param gActivity activity to be scanned for {@link BackFragment} instances
-     * @return true if back was handled by some fragment
-     */
-    public static boolean fireOnBackPressedEvent(AppCompatActivity gActivity) {
-        List<Fragment> fragmentList = gActivity.getSupportFragmentManager().getFragments();
-
-        return fireOnBackPressedEvent(fragmentList);
-    }
-
-    /**
-     * Fire {@link BackFragment#onBackPressed()} event on all {@link BackFragment} fragments in
      * given {@link FragmentActivity}.
      * @param gActivity activity to be scanned for {@link BackFragment} instances
      * @return true if back was handled by some fragment
      */
     public static boolean fireOnBackPressedEvent(FragmentActivity gActivity) {
+        List<Fragment> fragmentList = getAllActivityFragments(gActivity);
+        return fireOnBackPressedEvent(fragmentList);
+    }
+
+    private static List<Fragment> getAllActivityFragments(FragmentActivity gActivity) {
         List<Fragment> fragmentList = gActivity.getSupportFragmentManager().getFragments();
 
-        return fireOnBackPressedEvent(fragmentList);
+        List<Fragment> result = new ArrayList<>(fragmentList);
+
+        for(Fragment f : fragmentList) {
+            List<Fragment> nestedFragmentList = f.getChildFragmentManager().getFragments();
+            if(nestedFragmentList != null && nestedFragmentList.size() > 0) {
+                result.addAll(nestedFragmentList);
+            }
+        }
+
+        return result;
     }
 
     private static boolean fireOnBackPressedEvent(List<?> gFragmentList) {

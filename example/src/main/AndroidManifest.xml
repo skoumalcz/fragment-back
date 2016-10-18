@@ -18,6 +18,7 @@
 
         <activity android:name=".ViewPagerActivity" />
         <activity android:name=".StandardActivity" />
+        <activity android:name=".NestedFragementsActivity" />
     </application>
 
 </manifest>

@@ -14,7 +14,7 @@ Download the latest JAR:
 or via Gradle:
 
 ```groovy
-compile 'net.skoumal.fragmentback:fragment-back:0.2.0'
+compile 'net.skoumal.fragmentback:fragment-back:0.2.2'
 ```
 
 Usage

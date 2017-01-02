@@ -8,9 +8,11 @@ task sourcesJar(type: Jar) {
 }
 
 task javadoc(type: Javadoc) {
+    failOnError false
     source = android.sourceSets.main.java.srcDirs
     exclude '**/*.h', '**/*.m'
     classpath += project.files(android.getBootClasspath().join(File.pathSeparator))
+
 }
 
 task javadocJar(type: Jar, dependsOn: javadoc) {

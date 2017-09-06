@@ -131,6 +131,12 @@ public abstract class BaseFragment extends Fragment implements BackFragment {
 }
 ```
 
+Under the hood
+--------------
+
+Read [this article](https://www.skoumal.net/en/android-handle-back-press-in-fragment/ "Handling back press in Fragment")
+ to see how this library is build under the hood. 
+
 License
 =======
 

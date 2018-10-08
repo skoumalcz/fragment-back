@@ -15,6 +15,8 @@
  */
 package net.skoumal.fragmentback;
 
+import android.os.Build;
+
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
@@ -89,7 +91,15 @@ public class BackFragmentHelper {
         // send them onBackPressed event
         boolean handled = false;
         for (BackFragment f : backFragmentList) {
-            handled = f.onBackPressed();
+            if (f instanceof Fragment) {
+                if (((Fragment) f).getUserVisibleHint()) {
+                    handled = f.onBackPressed();
+                }
+            } else if (f instanceof android.app.Fragment && isCompatible()) {
+                if (((android.app.Fragment) f).getUserVisibleHint()) {
+                    handled = f.onBackPressed();
+                }
+            }
 
             if (handled) {
                 break;
@@ -97,5 +107,9 @@ public class BackFragmentHelper {
         }
 
         return handled;
+    }
+
+    private static boolean isCompatible() {
+        return Build.VERSION.SDK_INT >= Build.VERSION_CODES.ICE_CREAM_SANDWICH_MR1;
     }
 }

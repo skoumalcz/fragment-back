@@ -15,18 +15,13 @@
  */
 package net.skoumal.fragmentback.example;
 
-import android.graphics.Color;
-import android.graphics.Typeface;
 import android.os.Bundle;
-import android.support.v4.app.Fragment;
-import android.support.v4.app.FragmentPagerAdapter;
-import android.support.v4.view.PagerAdapter;
-import android.support.v4.view.ViewPager;
-import android.text.TextUtils;
-import android.view.View;
-import android.widget.TextView;
 
 import net.skoumal.fragmentback.BackFragmentAppCompatActivity;
+
+import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentPagerAdapter;
+import androidx.viewpager.widget.ViewPager;
 
 public class ViewPagerActivity extends BackFragmentAppCompatActivity {
 
@@ -38,7 +33,7 @@ public class ViewPagerActivity extends BackFragmentAppCompatActivity {
 
         setContentView(R.layout.activity_viewpager);
 
-        viewPager = (ViewPager) findViewById(R.id.view_pager);
+        viewPager = findViewById(R.id.view_pager);
 
         viewPager.setAdapter(new FragmentPagerAdapter(getSupportFragmentManager()) {
             @Override

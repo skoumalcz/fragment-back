@@ -16,14 +16,13 @@
 package net.skoumal.fragmentback.example;
 
 import android.os.Bundle;
-import android.support.v4.app.Fragment;
-import android.text.TextUtils;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.TextView;
 
 import net.skoumal.fragmentback.BackFragment;
+
+import androidx.fragment.app.Fragment;
 
 /**
  * Simple fragment with low priority for back button event.
@@ -44,7 +43,7 @@ public class ParentFragment extends Fragment implements BackFragment {
                              Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_parent, container, false);
 
-        if(savedInstanceState == null) {
+        if (savedInstanceState == null) {
             getChildFragmentManager().beginTransaction()
                     .add(R.id.top_fragment, FirstFragment.newInstance())
                     .add(R.id.bottom_fragment, SecondFragment.newInstance())

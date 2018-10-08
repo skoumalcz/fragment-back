@@ -15,13 +15,13 @@
  */
 package net.skoumal.fragmentback;
 
-import android.support.v4.app.Fragment;
-import android.support.v4.app.FragmentActivity;
-
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
 import java.util.List;
+
+import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentActivity;
 
 /**
  * Created by gingo on 16.6.2016.
@@ -35,6 +35,7 @@ public class BackFragmentHelper {
     /**
      * Fire {@link BackFragment#onBackPressed()} event on all {@link BackFragment} fragments in
      * given {@link FragmentActivity}.
+     *
      * @param gActivity activity to be scanned for {@link BackFragment} instances
      * @return true if back was handled by some fragment
      */
@@ -46,11 +47,11 @@ public class BackFragmentHelper {
     private static List<Fragment> getAllActivityFragments(FragmentActivity gActivity) {
         List<Fragment> fragmentList = gActivity.getSupportFragmentManager().getFragments();
 
-        if(fragmentList != null && fragmentList.size() > 0) {
+        if (fragmentList != null && fragmentList.size() > 0) {
             List<Fragment> result = new ArrayList<>(fragmentList.size());
 
             for (Fragment f : fragmentList) {
-                if(f != null) {
+                if (f != null) {
                     result.add(f);
 
                     List<Fragment> nestedFragmentList = f.getChildFragmentManager().getFragments();
@@ -70,9 +71,9 @@ public class BackFragmentHelper {
 
         // find all fragments with back support
         List<BackFragment> backFragmentList = new ArrayList<>(gFragmentList.size());
-        for(Object f : gFragmentList) {
-            if(f instanceof BackFragment) {
-                backFragmentList.add((BackFragment)f);
+        for (Object f : gFragmentList) {
+            if (f instanceof BackFragment) {
+                backFragmentList.add((BackFragment) f);
             }
         }
 
@@ -86,10 +87,10 @@ public class BackFragmentHelper {
 
         // send them onBackPressed event
         boolean handled = false;
-        for (BackFragment f: backFragmentList) {
+        for (BackFragment f : backFragmentList) {
             handled = f.onBackPressed();
 
-            if(handled) {
+            if (handled) {
                 break;
             }
         }

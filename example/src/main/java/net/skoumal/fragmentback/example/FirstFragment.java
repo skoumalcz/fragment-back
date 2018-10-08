@@ -16,7 +16,6 @@
 package net.skoumal.fragmentback.example;
 
 import android.os.Bundle;
-import android.support.v4.app.Fragment;
 import android.text.TextUtils;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -24,6 +23,8 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 
 import net.skoumal.fragmentback.BackFragment;
+
+import androidx.fragment.app.Fragment;
 
 /**
  * Simple fragment with low priority for back button event.
@@ -45,8 +46,8 @@ public class FirstFragment extends Fragment implements BackFragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_main, container, false);
-        myTextView = (TextView)view.findViewById(R.id.my_text_view);
-        ((TextView)view.findViewById(R.id.header_text_view)).setText(R.string.first_fragment);
+        myTextView = view.findViewById(R.id.my_text_view);
+        ((TextView) view.findViewById(R.id.header_text_view)).setText(R.string.first_fragment);
         return view;
     }
 
@@ -54,7 +55,7 @@ public class FirstFragment extends Fragment implements BackFragment {
     public boolean onBackPressed() {
 
         // here should be your own logic
-        if(TextUtils.isEmpty(myTextView.getText())) {
+        if (TextUtils.isEmpty(myTextView.getText())) {
             myTextView.setText(getString(R.string.back_handled));
             return true;
         } else {

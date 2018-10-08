@@ -15,7 +15,6 @@
  */
 package net.skoumal.fragmentback.example;
 
-import android.content.Intent;
 import android.graphics.Color;
 import android.graphics.Typeface;
 import android.os.Bundle;
@@ -33,25 +32,25 @@ public class StandardActivity extends BackFragmentAppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_standard);
 
-        if(savedInstanceState == null) {
+        if (savedInstanceState == null) {
             getSupportFragmentManager().beginTransaction()
                     .add(R.id.second_fragment_container, SecondFragment.newInstance())
                     .commit();
         }
 
-        activityTextView = (TextView) findViewById(R.id.activity_text_view);
+        activityTextView = findViewById(R.id.activity_text_view);
     }
 
     @Override
     public void onBackPressed() {
 
         // you can override this method to handle back here in certain conditions
-        if(TextUtils.isEmpty(activityTextView.getText())) {
+        if (TextUtils.isEmpty(activityTextView.getText())) {
             // handle first back button in activity
             activityTextView.setText(R.string.activity_first_back_handled);
-        } else if(!onBackPressedWithResult()) { // ask fragments to handle back
+        } else if (!onBackPressedWithResult()) { // ask fragments to handle back
             // if fragments no longer care about back, handle it here
-            if(TextUtils.equals(activityTextView.getText(),
+            if (TextUtils.equals(activityTextView.getText(),
                     getString(R.string.activity_first_back_handled))) {
                 // handle the last back before quiting activity here
                 activityTextView.setText(R.string.activity_last_back_handled);

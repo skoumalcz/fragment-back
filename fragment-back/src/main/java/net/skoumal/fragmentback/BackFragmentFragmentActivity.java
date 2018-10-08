@@ -15,13 +15,13 @@
  */
 package net.skoumal.fragmentback;
 
-import android.support.v4.app.FragmentActivity;
+import androidx.fragment.app.FragmentActivity;
 
 public class BackFragmentFragmentActivity extends FragmentActivity {
 
     @Override
     public void onBackPressed() {
-        if(!onBackPressedWithResult()) {
+        if (!onBackPressedWithResult()) {
             super.onBackPressed();
         }
     }
@@ -30,6 +30,7 @@ public class BackFragmentFragmentActivity extends FragmentActivity {
      * Enhanced version of {@link #onBackPressed()} with indication if back press was consumed.
      * It does not call default implementation of {@link #onBackPressed()}, you have to call it
      * your self in cases you want standard back behaviour.
+     *
      * @return true if back press was handled by some fragment
      */
     public boolean onBackPressedWithResult() {

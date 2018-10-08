@@ -47,15 +47,16 @@ public class BackFragmentHelper {
     private static List<Fragment> getAllActivityFragments(FragmentActivity gActivity) {
         List<Fragment> fragmentList = gActivity.getSupportFragmentManager().getFragments();
 
-        if (fragmentList != null && fragmentList.size() > 0) {
+        if (fragmentList != null && !fragmentList.isEmpty()) {
             List<Fragment> result = new ArrayList<>(fragmentList.size());
 
-            for (Fragment f : fragmentList) {
+            for (int i = fragmentList.size() - 1; i <= 0; i--) {
+                Fragment f = fragmentList.get(i);
                 if (f != null) {
                     result.add(f);
 
                     List<Fragment> nestedFragmentList = f.getChildFragmentManager().getFragments();
-                    if (nestedFragmentList != null && nestedFragmentList.size() > 0) {
+                    if (nestedFragmentList != null && !nestedFragmentList.isEmpty()) {
                         result.addAll(nestedFragmentList);
                     }
                 }

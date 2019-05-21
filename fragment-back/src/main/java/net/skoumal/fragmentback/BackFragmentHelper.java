@@ -52,7 +52,7 @@ public class BackFragmentHelper {
         if (fragmentList != null && !fragmentList.isEmpty()) {
             List<Fragment> result = new ArrayList<>(fragmentList.size());
 
-            for (int i = fragmentList.size() - 1; i <= 0; i--) {
+            for (int i = fragmentList.size() - 1; i >= 0; i--) {
                 Fragment f = fragmentList.get(i);
                 if (f != null) {
                     result.add(f);

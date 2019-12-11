@@ -1,3 +1,12 @@
+EOL (DEPRECATED)
+===
+
+Since androidx [provides](https://cs.android.com/androidx/platform/frameworks/support/+/androidx-master-dev:activity/activity/src/main/java/androidx/activity/) similar functionality already included with your libraries, this has become unnecessary.
+
+By this point you should've migrated to androidx.navigation which has backpresses implemented by default.
+
+Anyway the library remains functional, but will not be updated anymore.
+
 FragmentBack
 ============
 
